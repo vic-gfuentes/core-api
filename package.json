@@ -1,0 +1,42 @@
+{
+  "name": "core-api",
+  "version": "1.0.0",
+  "description": "core express - prisma - pg api",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ]
+  },
+  "exports": {
+    "default": "./dist/index.js",
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.js",
+    "node": "./dist/index.cjs"
+  },
+  "scripts": {
+    "dev": "tsup src/index.ts --format esm --watch --onSuccess \"node dist/index.mjs\"",
+    "start": "node dist/index.mjs",
+    "build": "tsup src/index.ts --format esm --dts --minify --clean --sourcemap"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.11",
+    "prisma": "^5.13.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@prisma/client": "5.13.0",
+    "@types/cors": "^2.8.17",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0"
+  }
+}
