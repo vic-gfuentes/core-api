@@ -19,15 +19,23 @@
   "scripts": {
     "dev": "tsup src/index.ts --format esm --watch --onSuccess \"node dist/index.mjs\"",
     "start": "node dist/index.mjs",
-    "build": "tsup src/index.ts --format esm --dts --minify --clean --sourcemap"
+    "build": "tsup src/index.ts --format esm --dts --minify --clean --sourcemap",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
     "@types/node": "^20.12.11",
+    "@types/supertest": "^6.0.2",
+    "cross-env": "^7.0.3",
+    "jest": "^29.7.0",
+    "jest-mock-extended": "^3.0.7",
     "prisma": "^5.13.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.1.2",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
   },
