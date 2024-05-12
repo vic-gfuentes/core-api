@@ -1,5 +1,5 @@
-import { prismaMock } from '../../../../config';
-import { UsersService } from '../../../../src/api/users/users.service';
+import { prismaMock } from '@config/index';
+import { UsersService } from '@src/api/users/users.service';
 
 const mockedDate = new Date();
 const service = new UsersService();

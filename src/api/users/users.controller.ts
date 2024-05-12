@@ -1,7 +1,7 @@
 import { Request } from 'express';
-import { ApiResponse } from '../../contracts/api-response.contract';
+import { messages } from '@utils/wordings';
+import { ApiResponse } from '@contracts/api-response.contract';
 import { UsersService } from './users.service';
-import { messages } from '../../utils/wordings';
 
 export class UsersController {
   private readonly usersService: UsersService;

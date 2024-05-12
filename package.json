@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "tsup src/index.ts --format esm --watch --onSuccess \"node dist/index.mjs\"",
     "start": "node dist/index.mjs",
-    "build": "tsup src/index.ts --format esm --dts --minify --clean --sourcemap",
+    "build": "tsup src/index.ts --format esm --dts --minify --clean --sourcemap && tsc-alias -p tsconfig.json",
     "test": "jest"
   },
   "keywords": [],
@@ -36,6 +36,7 @@
     "prisma": "^5.13.0",
     "supertest": "^7.0.0",
     "ts-jest": "^29.1.2",
+    "tsc-alias": "^1.8.9",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
   },

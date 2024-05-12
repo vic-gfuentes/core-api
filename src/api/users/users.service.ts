@@ -1,7 +1,7 @@
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
-import prisma from '../../../lib/db';
+import prisma from '@lib/db';
 
 export class UsersService {
   async index() {
