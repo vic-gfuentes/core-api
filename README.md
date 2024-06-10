@@ -2,7 +2,7 @@
 
 ### Overview
 
-This Rest API is built with Node.js, Express, Prisma ORM, and PostgresQL. It provides CRUD functionality for a simple Users model.
+TypeScript REST API template built with Node.js, Express, Prisma ORM, and PostgreSQL for a user management system. It includes features such as CRUD operations for users, authentication, authorization, email sending, file upload handling, and background workers for asynchronous tasks. Includes test coverage for each component. Dockerization and CI/CD pipeline configurations are also available to ensure easy deployment and continuous integration.
 
 ### Installation
 
