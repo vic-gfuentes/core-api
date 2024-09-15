@@ -18,6 +18,7 @@ TypeScript REST API template built with Express, Prisma ORM. It includes feature
 - Create a .env file in the root directory of the project and set the following environment variables:
   - `DATABASE_URL`: URL to your PostgresQL database
   - `PORT`: Port number for the server to run on
+- Run `pnpm prisma generate` for you to have the prisma client
 - Run `pnpm prisma migrate dev` to apply the database schema to your database
 - Run `pnpm dev` to start the server
 
