@@ -2,7 +2,15 @@
 
 ### Overview
 
-TypeScript REST API template built with Node.js, Express, Prisma ORM, and PostgreSQL for a user management system. It includes features such as CRUD operations for users, authentication, authorization, email sending, file upload handling, and background workers for asynchronous tasks. Includes test coverage for each component. Dockerization and CI/CD pipeline configurations are also available to ensure easy deployment and continuous integration.
+TypeScript REST API template built with Express, Prisma ORM. It includes features such as CRUD operations for users, authentication, authorization, email sending, file upload handling, and background workers for asynchronous tasks. Includes test coverage for each component. Dockerization and CI/CD pipeline configurations are also available to ensure easy deployment and continuous integration.
+
+### Stack
+
+- Node.js
+- Express
+- Prisma ORM / PostgreSQL
+- Zod
+- Jest
 
 ### Installation
 

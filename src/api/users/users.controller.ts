@@ -3,7 +3,8 @@ import { messages } from '@utils/wordings';
 import { ApiResponse } from '@contracts/api-response.contract';
 import { UsersService } from './users.service';
 import { CREATED, OK } from '@src/utils/httpStatusCodes';
-import { asyncHandler } from '@src/middlewares'; // Import the async handler
+import { asyncHandler } from '@src/middlewares';
+import { UserSchema } from './user.schema';
 
 export class UsersController {
   private readonly usersService: UsersService;
@@ -31,8 +32,9 @@ export class UsersController {
   });
 
   create = asyncHandler(async (req: Request, res: ApiResponse) => {
-    const { name, email } = req.body;
-    const newUser = await this.usersService.create({ name, email });
+    const parsedData = UserSchema.omit({ id: true }).parse(req.body);
+
+    const newUser = await this.usersService.create(parsedData);
     return res.status(CREATED).json({
       success: true,
       message: messages.create,
@@ -42,7 +44,9 @@ export class UsersController {
 
   update = asyncHandler(
     async (req: Request<{ id: string }, any, { name: string; email: string; password: string }>, res: ApiResponse) => {
-      const updatedUser = await this.usersService.update(parseInt(req.params.id), req.body);
+      const parsedData = UserSchema.omit({ id: true }).parse(req.body);
+
+      const updatedUser = await this.usersService.update(parseInt(req.params.id), parsedData);
       return res.status(OK).json({
         success: true,
         message: messages.update,

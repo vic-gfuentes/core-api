@@ -1,7 +1,5 @@
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
-
 import prisma from '@lib/db';
+import { User } from './user.schema';
 
 export class UsersService {
   async index() {
@@ -16,24 +14,18 @@ export class UsersService {
     });
   }
 
-  async create(createUserDto: CreateUserDto) {
+  async create(data: User) {
     return await prisma.user.create({
-      data: {
-        name: createUserDto.name,
-        email: createUserDto.email,
-      },
+      data: data,
     });
   }
 
-  async update(id: number, updateUserDto: UpdateUserDto) {
+  async update(id: number, data: User) {
     return await prisma.user.update({
       where: {
         id: id,
       },
-      data: {
-        name: updateUserDto.name,
-        email: updateUserDto.email,
-      },
+      data: data,
     });
   }
 
