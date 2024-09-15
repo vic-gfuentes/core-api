@@ -2,7 +2,7 @@
 
 ### Overview
 
-TypeScript REST API template built with Express, Prisma ORM. It includes features such as CRUD operations for users, authentication, authorization, email sending, file upload handling, and background workers for asynchronous tasks. Includes test coverage for each component. Dockerization and CI/CD pipeline configurations are also available to ensure easy deployment and continuous integration.
+TypeScript REST API template built with Express, Prisma ORM. It includes features such as CRUD operations for users and test coverage for each component. Dockerization and CI/CD pipeline configurations are also available to ensure easy deployment and continuous integration.
 
 ### Stack
 
