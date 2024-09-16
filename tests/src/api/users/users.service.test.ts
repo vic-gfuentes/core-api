@@ -6,8 +6,8 @@ const service = new UsersService();
 
 const user = {
   id: 1,
-  name: 'Vic',
-  email: 'hello@prisma.io',
+  username: 'batman',
+  password: 'imnotbrucewayne',
   createdAt: mockedDate,
   updatedAt: mockedDate,
 };
