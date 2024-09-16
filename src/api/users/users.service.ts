@@ -1,7 +1,10 @@
 import prisma from '@lib/db';
 import { User } from './user.schema';
+import bcrypt from 'bcrypt';
 
 export class UsersService {
+  private saltRounds: number = 10;
+
   async index() {
     return await prisma.user.findMany();
   }
@@ -15,12 +18,23 @@ export class UsersService {
   }
 
   async create(data: User) {
+    const hashedPassword = await bcrypt.hash(data.password, this.saltRounds);
+
     return await prisma.user.create({
-      data: data,
+      data: {
+        ...data,
+        password: hashedPassword,
+      },
     });
   }
 
   async update(id: number, data: User) {
+    const updateData: any = { ...data };
+
+    if (data.password) {
+      updateData.password = await bcrypt.hash(data.password, this.saltRounds);
+    }
+
     return await prisma.user.update({
       where: {
         id: id,
