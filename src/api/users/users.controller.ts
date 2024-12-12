@@ -22,7 +22,7 @@ export class UsersController {
     });
   });
 
-  show = asyncHandler(async (req: Request<{ id: string }>, res: ApiResponse) => {
+  show = asyncHandler(async (req: Request, res: ApiResponse) => {
     const user = await this.usersService.show(parseInt(req.params.id));
     return res.status(OK).json({
       success: true,
@@ -43,7 +43,7 @@ export class UsersController {
   });
 
   update = asyncHandler(
-    async (req: Request<{ id: string }, any, { name: string; email: string; password: string }>, res: ApiResponse) => {
+    async (req: Request, res: ApiResponse) => {
       const parsedData = UserSchema.omit({ id: true }).parse(req.body);
 
       const updatedUser = await this.usersService.update(parseInt(req.params.id), parsedData);
@@ -55,7 +55,7 @@ export class UsersController {
     }
   );
 
-  delete = asyncHandler(async (req: Request<{ id: string }>, res: ApiResponse) => {
+  delete = asyncHandler(async (req: Request, res: ApiResponse) => {
     const deletedUser = await this.usersService.delete(parseInt(req.params.id));
     return res.status(OK).json({
       success: true,

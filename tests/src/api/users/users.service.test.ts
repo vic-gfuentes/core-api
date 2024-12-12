@@ -17,19 +17,19 @@ beforeEach(() => {
 });
 
 test('should list all users', async () => {
-  prismaMock.user.findMany.mockResolvedValue([user]);
+  prismaMock.user.findMany.mockResolvedValueOnce([user]);
 
   await expect(service.index()).resolves.toEqual([user]);
 });
 
 test('should find a user by id', async () => {
-  prismaMock.user.findUnique.mockResolvedValue(user);
+  prismaMock.user.findUnique.mockResolvedValueOnce(user);
 
   await expect(service.show(user.id)).resolves.toEqual(user);
 });
 
 test('should create new user', async () => {
-  prismaMock.user.create.mockResolvedValue(user);
+  prismaMock.user.create.mockResolvedValueOnce(user);
 
   await expect(service.create(user)).resolves.toEqual(user);
 });
@@ -40,7 +40,7 @@ test('should update a users name', async () => {
     name: 'Vic Fuentes',
   };
 
-  prismaMock.user.update.mockResolvedValue(newUser);
+  prismaMock.user.update.mockResolvedValueOnce(newUser);
 
   await expect(service.update(user.id, newUser)).resolves.toEqual(newUser);
 });
